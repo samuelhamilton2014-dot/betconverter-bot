@@ -1,10 +1,9 @@
 import os, requests
-TOKEN = "PUT_YOUR_TOKEN_HERE"
-KEY = "PUT_YOUR_MBC_KEY_HERE"
+TOKEN = 9021034202:AAHU2XtnBkwWTc3FZnL09ClK7lTrlELN9Bg
+mbc_live_sXxrPgZoebY2_IdXO8wqoPrW8bPYhmlk1iuanRszww0
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, CallbackQueryHandler, ContextTypes, filters
-PAIRS = {" 【entity-SportyBet¦canonical_name=SportyBet】-> 【entity-Bet9ja¦canonical_name=Bet9ja】": (" 【entity-sportybet¦canonical_name=SportyBet】", " 【entity-bet9ja¦canonical_name=Bet9ja】"), " 【entity-Bet9ja¦canonical_name=Bet9ja】-> 【entity-SportyBet¦canonical_name=SportyBet】": (" 【entity-bet9ja¦canonical_name=Bet9ja】", " 【entity-sportybet¦canonical_name=SportyBet】"), " 【entity-SportyBet¦canonical_name=SportyBet】->1xBet": (" 【entity-sportybet¦canonical_name=SportyBet】", "1xng")}
-async def start(u: Update, c: ContextTypes.DEFAULT_TYPE):
+PAIRSPAIRS = {"A->B": ("sportybet", "bet9ja"), "B->A": ("bet9ja", "sportybet"), "A->C": ("sportybet", "1xng")}
     kb = [[InlineKeyboardButton(k, callback_data=k)] for k in PAIRS]
     await u.message.reply_text("BetConverter NG - Pick:", reply_markup=InlineKeyboardMarkup(kb))
 async def btn(u: Update, c: ContextTypes.DEFAULT_TYPE):
